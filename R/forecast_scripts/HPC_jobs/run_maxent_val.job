@@ -1,0 +1,21 @@
+#!/bin/bash
+#SBATCH --job-name=hmsc-hpc_fit
+#SBATCH  -M ukko
+#SBATCH --output=/home/wiejori/Ant_ENM/logs/log_job_%A_%a.log
+#SBATCH --mem=128G
+#SBATCH --time=3:00:00 
+#SBATCH -c 32
+#SBATCH --partition=bigmem
+#SBATCH --mail-type=END,FAIL               
+#SBATCH --mail-user=joris.wiethase@helsinki.fi    
+#SBATCH --array=1-36 #36  
+project="Ant_ENM"
+directory="$HOME/$project"
+
+module purge
+module load R/4.2.1-foss-2022a
+module load GSL/2.7-GCC-12.3.0
+module load GDAL/3.7.1-foss-2023a
+module load UDUNITS/2.2.28-GCCcore-12.3.0
+srun Rscript "$HOME/$project/S8_Maxent_val_HPC.R"  $SLURM_ARRAY_TASK_ID
+
