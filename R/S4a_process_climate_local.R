@@ -124,7 +124,7 @@ for(period in c('current', 'rcp45', 'rcp85')){
                   quarterly_temp_rasters[[i]] <- rast(month_temp_rasters) %>% median()
             }
             
-            temp_qtr_09perc <- app(rast(month_temp_rasters), fun = calc_quantiles, probs = quantile) 
+            temp_qtr_09perc <- app(rast(quarterly_temp_rasters), fun = calc_quantiles, probs = quantile) 
             return(temp_qtr_09perc)
       }
       
