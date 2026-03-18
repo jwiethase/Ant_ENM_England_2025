@@ -6,6 +6,10 @@ Species distribution modelling and landscape connectivity analysis for two wood 
 
 This project uses Maxent species distribution models at 30 m resolution to map current habitat suitability for *F. rufa* and *F. lugubris*, and combines model outputs with landscape metrics and dispersal analysis to identify occupied patches, naturally colonisable habitat, and potential translocation sites. A separate set of forecast scripts projects suitability changes under RCP 4.5 and RCP 8.5 climate scenarios for the period 2070–2073. Model outputs are exported to Google Earth Engine for interactive visualisation via a web app.
 
+## Data Availability
+
+This repository contains analysis scripts only. Occurrence records and model outputs are not included due to licensing and data-sharing restrictions. Environmental rasters, forest management boundaries, etc. are not included due to size restructions. The directory paths and filenames referenced in the scripts reflect the original project structure and would need to be adapted to any locally available data.
+
 ## Species
 
 *Formica rufa* (southern red wood ant) — predominantly southern England.
@@ -99,7 +103,7 @@ Final figures include species-specific suitability maps, variable importance plo
 
 ## Dependencies
 
-The project is written in R and relies on the following key packages: `terra`, `raster`, `tidyverse`, `tidyterra`, `dismo`, `ENMeval`, `rJava` (for maxent.jar), `ecospat`, `enmSdmX`, `landscapemetrics`, `usdm`, `data.table`, `viridis`, `ggpubr`, and `patchwork`. Maxent models are run via ENMeval with algorithm = 'maxent.jar', which requires a working Java installation and rJava. See the ENMeval vignette for setup details. Several scripts require substantial memory and are designed for HPC environments.
+The project is written in R and relies on the following key packages: `terra`, `raster`, `tidyverse`, `tidyterra`, `dismo`, `ENMeval`, `rJava` (for maxent.jar), `ecospat`, `enmSdmX`, `landscapemetrics`, `usdm`, `data.table`, `viridis`, `ggpubr`, and `patchwork`. Maxent models are run via `ENMeval` with `algorithm = 'maxent.jar'`, which requires a working Java installation and `rJava`. See the [ENMeval vignette](https://jamiemkass.github.io/ENMeval/articles/ENMeval-2.0-vignette.html) for setup details. Several scripts require substantial memory and are designed for HPC environments.
 
 ## CRS
 
