@@ -84,8 +84,6 @@ topo_stack_30m <- c(northness_30m, eastness_30m, hillshade_30m, slope_30m) %>%
 
 names(topo_stack_30m) <- c('northness', 'eastness', 'hillshade', 'slope')
 
-topo_stack_300m <- topo_stack_30m %>% terra::aggregate(fact = 10, fun = 'median', threads = T)
-
 # Effort raster ----------------------------------------------------
 effort_lgcp_vector <- vect("spatial_other/effort_lgcp_10km.shp") 
 

@@ -22,7 +22,7 @@ file_list <- c('maxTransDist_2km/Formica_lugubris_pointBuff_0.05_ON_Thresh0.5_SN
 dir.create('model_out_patches/for_GEE', showWarnings = F)
 
 for(i in file_list){
-      name <- gsub('.tif', '', basename(i))
+      name <- gsub('\\.tif$', '', basename(i))
       img <- rast(paste0('model_out_patches/Formica_', str_split(name, "_")[[1]][2], '/', i)) 
       img <- img %>% 
             project(crs('EPSG:27700'))

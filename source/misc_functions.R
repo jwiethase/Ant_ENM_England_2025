@@ -1,11 +1,3 @@
-get_OR.10p <- function(suit_raster, pres_df, perc = 0.1){
-      obs <- terra::extract(suit_raster, cbind(pres_df$x, pres_df$y)) %>% 
-            drop_na()
-      threshold_10th_percentile <- quantile(values(suit_raster), probs = perc, na.rm = TRUE)
-      omission_rate <- mean(obs < threshold_10th_percentile, na.rm = TRUE)
-      omission_rate
-}
-
 crop_and_export <- function(filepath, dest_folder){
       target_crs <- "+proj=longlat +datum=WGS84 +lon_wrap=180"
       
@@ -87,7 +79,7 @@ group_thin_spatial <- function(points, dist_meters, seed = NULL, group_var, crs_
             points_df = points
       }
       
-      if(is.null(crs)){
+      if(is.null(crs_spec)){
             crs_p = crs(points)
       } else {
             crs_p = crs_spec

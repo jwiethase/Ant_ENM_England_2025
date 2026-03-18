@@ -161,15 +161,15 @@ FE_managed <- vect('Ant_ENM/data/Forestry_England_managed_forest.shp') %>%
 
 new_forest <- FE_managed %>%
    filter(extent == 'The Open Forest') %>%
-   fillHoles
+   fillHoles()
 
 ennerdale <- FE_managed %>%
    filter(extent == 'Ennerdale') %>%
-   fillHoles
+   fillHoles()
 
 cropton <- FE_managed %>%
    filter(extent == 'Cropton') %>%
-   fillHoles
+   fillHoles()
 
 new_forest_suit_maxent <- suitability_preds_fine %>%
    crop(new_forest) %>%
