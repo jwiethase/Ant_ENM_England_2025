@@ -86,7 +86,17 @@ e.mx <- ENMevaluate(occs = occs, bg = bg_bias,
                     algorithm = 'maxent.jar', partitions = 'randomkfold', partition.settings = list(kfolds = 10),
                     tune.args = list(fc = c("L", "Q", "LQ"), rm = seq(1, 10, 0.5)),
                     parallel = T, numCores = n_cores,
-                    raster.preds = F)
+                    raster.preds = F,
+                    # The following settings are crucial, as otherwise GBs of files will be
+                    # written on HPC tmp directory 
+                    other.settings = list(path = 'Ant_ENM/tmp_files',
+                                          other.args = list(pictures = F, 
+                                                            outputdirectory = 'Ant_ENM/tmp_files',
+                                                            writeclampgrid = F,
+                                                            writemess = F,
+                                                            plots = F,
+                                                            outputgrids = F,
+                                                            visible = F)))
 print("Maxent model done")
 
 # Model selection

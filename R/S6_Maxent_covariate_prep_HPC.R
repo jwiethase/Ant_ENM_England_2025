@@ -35,8 +35,7 @@ topo_covariates <- rast("Ant_ENM/data/topo_stack_30m.tif") %>%
 topo_covariates$slope <- log(topo_covariates$slope+1)
 
 distance_forest <- rast("Ant_ENM/data/distance_forest_30m.tif") %>%
-      terra::resample(forest_covariates) %>%
-      +0.001 %>%
+      terra::resample(forest_covariates) + 0.001 %>%
       log()
 names(distance_forest) <- "distance_forest"
 print('distance_forest done')
