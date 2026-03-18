@@ -14,12 +14,12 @@ library(lubridate)
 start_year <- 2010
 end_year <- 2013
 
-# Base URL for the directory
+# Base URL for the directory, un-comment as needed
 base_url <- "https://dap.ceda.ac.uk/badc/deposited2021/chess-scape/data/rcp45_bias-corrected/01/daily/pr/"
 download_dir <- "'/Users/joriswiethase/Library/CloudStorage/GoogleDrive-j.wiethase@gmail.com/My Drive/Ant modelling/Ant_ENM_new/covariates/raw/rcp45'"
 
-base_url <- "https://dap.ceda.ac.uk/badc/deposited2021/chess-scape/data/rcp85_bias-corrected/01/daily/pr/"
-download_dir <- "'/Users/joriswiethase/Library/CloudStorage/GoogleDrive-j.wiethase@gmail.com/My Drive/Ant modelling/Ant_ENM_new/covariates/raw/rcp85'"
+# base_url <- "https://dap.ceda.ac.uk/badc/deposited2021/chess-scape/data/rcp85_bias-corrected/01/daily/pr/"
+# download_dir <- "'/Users/joriswiethase/Library/CloudStorage/GoogleDrive-j.wiethase@gmail.com/My Drive/Ant modelling/Ant_ENM_new/covariates/raw/rcp85'"
 
 
 # Retrieve directory listing
