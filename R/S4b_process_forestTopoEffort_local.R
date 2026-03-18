@@ -49,6 +49,7 @@ distance_forest <- terra::distance(forest_mask, unit = "m") %>%
 sporadic <- vect('species_data/processed_shp/sporadic_combined.shp')
 vals <- terra::extract(distance_forest, sporadic, ID = F)
 distance_upper <- quantile(vals$cover_VOM, probs = 0.95)
+print(distance_upper)
 
 ## 95% of nests are within 67.1 meters of the forest edge. Round up and use as buffer
 forest_mask_buff <- buffer(forest_mask, width = 0.07, background = 0)
