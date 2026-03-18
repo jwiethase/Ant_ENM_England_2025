@@ -81,7 +81,7 @@ nym_4 <- vect('species_data/raw/NYM/Cropton margins 2019_2.shp') %>%
 nym_5 <- read.csv('species_data/raw/NYM/cropton_margins_nest_data_2020.csv') %>% 
       dplyr::select(Lng, Lat, Date.visited) %>% 
       drop_na() %>% 
-      vect(geom = c('Lat', 'Lng'), crs = crs('epsg:4326')) %>% 
+      vect(geom = c('Lat', 'Lng'), crs = crs('epsg:4326')) %>% # Coordinate names switched in original data
       terra::project(crs("epsg:27700")) %>% 
       crop(ROI_27700) %>% 
       as.data.frame(geom = 'XY') %>% 
