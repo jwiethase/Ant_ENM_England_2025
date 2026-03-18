@@ -83,13 +83,13 @@ Maxent models are fitted using `ENMeval` with bias-corrected background points w
 
 Best models predict suitability at full 30 m resolution across England. Predictions are thresholded to define "likely occupied now" (ON) patches (areas of high suitability within a 50 m buffer of known nest locations), "suitable not occupied" (SNO) patches, and dispersal-accessible habitat (within 100 m of occupied patches). Translocation candidate patches are identified as suitable habitat that is neither currently occupied nor within natural dispersal range, at configurable gap distances (0, 2, 5, 25 km). Landscape metrics (via `landscapemetrics`) characterise patch sizes and connectivity. All analyses are run across a factorial design of threshold and distance parameters.
 
-### 5. Climate Projections (forecast_scripts/)
-
-Suitability is projected under RCP 4.5 and RCP 8.5 for 2070–2073 by substituting future climate layers while holding forest and topography constant. Spatial difference and ratio maps show where suitability is expected to increase or decrease.
-
-### 6. Outputs and Visualisation (S12–S14)
+### 5. Outputs and Visualisation (S12–S14)
 
 Final figures include species-specific suitability maps, variable importance plots, and Forestry England site-level maps (e.g. New Forest, Cropton, Ennerdale). Summary statistics quantify the proportion of Forestry England land that is occupied, suitable, naturally colonisable, and available for translocation. Rasters are reprojected to EPSG:27700 for upload to Google Earth Engine.
+
+### 6. Climate Projections (forecast_scripts/)
+
+Suitability is projected under RCP 4.5 and RCP 8.5 for 2070–2073 by substituting future climate layers while holding forest and topography constant. Spatial difference and ratio maps show where suitability is expected to increase or decrease. Note: The forecast scripts are less actively maintained than the main analysis pipeline and are included here for reference. They may require adaptation to work with the current covariate and model structure.
 
 ## Key Parameters
 
